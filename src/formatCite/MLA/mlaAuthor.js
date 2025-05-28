@@ -1,4 +1,4 @@
-const partAuthor=require('../../utils/formatAuthor')
+const partAuthor=require('../../../utils/formatAuthor')
 
 function formatMLA_Author(author){
     if(author.length==0||author==null){
