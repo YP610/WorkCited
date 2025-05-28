@@ -7,8 +7,7 @@ const metascraper=require('metascraper')([
     require('metascraper-date')(),
     require('metascraper-publisher')()
 ]);
-async function getMetaScraper(){
-    const url='https://x.com/BleacherReport/status/1914390582308560961';
+async function getMetaScraper(url){
     let html;
     try{
         const response=await got(url,{
@@ -43,7 +42,8 @@ async function getMetaScraper(){
     return {title,author,publisher,date,type:"web",url};
 }
 
-
+/*TEST:
 getMetaScraper();
+*/
 
 module.exports=getMetaScraper;

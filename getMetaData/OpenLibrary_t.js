@@ -1,7 +1,6 @@
-async function getOpenLibrary_title(){
+async function getOpenLibrary_title(title){
     try{
-        const input="TV Makes a Too-close call"
-        const response=await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(input)}`)
+        const response=await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(title)}`)
         const data=await response.json();
             const type="book";
             const item = data.docs[0];

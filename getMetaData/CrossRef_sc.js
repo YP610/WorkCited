@@ -1,6 +1,5 @@
-async function getCrossRef_doi(){
+async function getCrossRef_doi(doi){
     try{
-        const doi="10.1167/10.7.1378"
         const response=await fetch(`https://api.crossref.org/works/${doi}`);
         const data=await response.json();
             const item=data.message
@@ -21,7 +20,8 @@ async function getCrossRef_doi(){
     }
 }
 
-module.exports = getCrossRef_doi;
+module.exports= getCrossRef_doi;
+
 
 /*TEST: 
 getCrossRef_doi();

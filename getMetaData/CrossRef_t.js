@@ -1,7 +1,6 @@
-async function getCrossRef_title(){
+async function getCrossRef_title(title){
     try{
-        const input="Explaining the Time Order Effect"
-        const response=await fetch(`https://api.crossref.org/works?query.title=${encodeURIComponent(input)}`)
+        const response=await fetch(`https://api.crossref.org/works?query.title=${encodeURIComponent(title)}`)
         	const data=await response.json();
             const item=data.message.items[0]
 			let title = item.title?.[0] || null;

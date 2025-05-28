@@ -1,6 +1,5 @@
-async function getOpenLibrary_isbn(){
+async function getOpenLibrary_isbn(isbn){
     try{
-        const isbn="9780140328721"
         const response=await fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`);
         const data= await response.json();
             const type="book";
